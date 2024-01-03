@@ -1,1 +1,0 @@
-savedcmd_/home/scrime/Downloads/usr/src/zm-1-driver-2.6.0/linux/Module.symvers :=  scripts/mod/modpost -M  -a    -N  -o /home/scrime/Downloads/usr/src/zm-1-driver-2.6.0/linux/Module.symvers -n -T /home/scrime/Downloads/usr/src/zm-1-driver-2.6.0/linux/modules.order -i Module.symvers -e 

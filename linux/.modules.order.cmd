@@ -1,1 +1,0 @@
-savedcmd_/home/scrime/Downloads/usr/src/zm-1-driver-2.6.0/linux/modules.order := {   echo /home/scrime/Downloads/usr/src/zm-1-driver-2.6.0/linux/zm_1_driver.o; :; } > /home/scrime/Downloads/usr/src/zm-1-driver-2.6.0/linux/modules.order

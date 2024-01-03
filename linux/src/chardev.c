@@ -439,7 +439,7 @@ int z_chr_unregister(struct z_device_ctx* ctx)
 
 
 
-static int z_chr_uevent(struct device* a_Dev, struct kobj_uevent_env* a_Env)
+static int z_chr_uevent(const struct device* a_Dev, struct kobj_uevent_env* a_Env)
 {
     add_uevent_var(a_Env, "DEVMODE=%#o", 0666);
     return 0;
@@ -451,7 +451,11 @@ static int z_chr_uevent(struct device* a_Dev, struct kobj_uevent_env* a_Env)
 int z_chr_register_class(void)
 {
     
+#if LINUX_VERSION_CODE < KERNEL_VERSION(6, 5, 0)
     z_chr_class = class_create(THIS_MODULE, Z_DRIVER_NAME);
+#else
+    z_chr_class = class_create(Z_DRIVER_NAME);
+#endif
 
     if (!z_chr_class) {
         PRINT("Error registering character device class '"Z_DRIVER_NAME"'");

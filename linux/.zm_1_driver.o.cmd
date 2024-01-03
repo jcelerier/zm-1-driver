@@ -1,3 +1,0 @@
-savedcmd_/home/scrime/Downloads/usr/src/zm-1-driver-2.6.0/linux/zm_1_driver.o := ld -m elf_x86_64 -z noexecstack --no-warn-rwx-segments   -r -o /home/scrime/Downloads/usr/src/zm-1-driver-2.6.0/linux/zm_1_driver.o @/home/scrime/Downloads/usr/src/zm-1-driver-2.6.0/linux/zm_1_driver.mod  ; ./tools/objtool/objtool --hacks=jump_label --hacks=noinstr --hacks=skylake --ibt --orc --retpoline --rethunk --sls --static-call --uaccess --prefix=16  --link  --module /home/scrime/Downloads/usr/src/zm-1-driver-2.6.0/linux/zm_1_driver.o
-
-/home/scrime/Downloads/usr/src/zm-1-driver-2.6.0/linux/zm_1_driver.o: $(wildcard ./tools/objtool/objtool)

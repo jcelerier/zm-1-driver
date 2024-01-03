@@ -628,9 +628,12 @@ static int z_snd_pcm_register(struct z_device_ctx* ctx)
     ctx->snd.pcm->info_flags = 0;
     strcpy(ctx->snd.pcm->name, Z_PCM_NAME);
 
-    
     snd_pcm_lib_preallocate_pages_for_all(ctx->snd.pcm, SNDRV_DMA_TYPE_CONTINUOUS,
+#if LINUX_VERSION_CODE < KERNEL_VERSION(6, 1, 0)
                                           snd_dma_continuous_data(GFP_KERNEL),
+#else
+                                          NULL,
+#endif
                                           Z_PCM_MAX_BUFFER, Z_PCM_MAX_BUFFER);
     return 0;
 }
